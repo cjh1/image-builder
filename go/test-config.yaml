@@ -1,0 +1,18 @@
+options:
+  layer_type: 'base'
+  name: 'test-image'
+  pkg_manager: 'dnf'
+  parent: 'fedora:latest'
+  publish_local: true
+  log_level: "info"
+
+packages:
+  - bash
+  - coreutils
+  - dnf
+  - vim
+  - curl
+  - wget
+
+cmds:
+  - 'echo "This is a test image with vim and wget installed" > /etc/motd'

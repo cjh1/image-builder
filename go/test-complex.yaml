@@ -1,0 +1,33 @@
+options:
+  layer_type: 'base'
+  name: 'test-complex-image'
+  pkg_manager: 'dnf'
+  parent: 'fedora:latest'
+  publish_local: true
+  log_level: "info"
+
+repos:
+  - alias: 'fedora'
+    url: 'https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&arch=$basearch'
+    gpg_key: 'https://getfedora.org/static/fedora.gpg'
+  - alias: 'updates'
+    url: 'https://mirrors.fedoraproject.org/metalink?repo=updates-released-f$releasever&arch=$basearch'
+    gpg_key: 'https://getfedora.org/static/fedora.gpg'
+
+package_groups:
+  - 'Core'
+
+packages:
+  - bash
+  - coreutils
+  - dnf
+  - vim
+  - curl
+  - wget
+
+cmds:
+  - 'echo "Hello from the container!" > /etc/motd'
+
+copyfiles:
+  - src: '/home/cjh/work/source/image-builder/go/config.yaml'
+    dest: '/etc/image-builder/config.yaml'

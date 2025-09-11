@@ -1,0 +1,36 @@
+# Image Builder Configuration
+options:
+  layer_type: "base"
+  name: "base-image"
+  pkg_manager: "dnf"
+  parent: "scratch"
+  publish_local: true
+  log_level: "info"
+  ansible_verbosity: 1
+
+repos: []
+
+package_groups: []
+
+packages:
+  - bash
+  - coreutils
+  - dnf
+
+cmds: []
+
+copyfiles: []
+
+# Ansible specific configurations
+ansible:
+  groups: []
+  playbooks: ""
+  inventory: ""
+  vars: {}
+
+# Registry configuration
+registry:
+  hostname: ""
+  namespace: ""
+  pull_options: []
+  push_options: []

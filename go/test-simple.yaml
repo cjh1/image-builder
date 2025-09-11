@@ -1,0 +1,15 @@
+options:
+  layer_type: 'base'
+  name: 'test-simple-image'
+  pkg_manager: 'dnf'
+  parent: 'fedora:latest'
+  publish_local: true
+  log_level: "info"
+
+packages:
+  - vim
+  - curl
+  - wget
+
+cmds:
+  - 'echo "Hello from the container!" > /etc/motd'

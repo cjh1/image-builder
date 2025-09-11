@@ -1,0 +1,18 @@
+options:
+  layer_type: base
+  pkg_manager: dnf
+
+packages:
+  - curl
+  - wget
+  - vim
+
+package_groups:
+  - "Core"
+
+repositories:
+  - alias: "base"
+    url: "http://mirror.centos.org/centos/8/BaseOS/x86_64/os/"
+
+cmds:
+  - "echo 'Built with Go Image Builder' > /etc/motd"

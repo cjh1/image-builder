@@ -1,0 +1,20 @@
+options:
+  layer_type: 'base'
+  name: 'test-image'
+  pkg_manager: 'dnf'
+  parent: 'fedora:latest'
+  publish_local: true
+  log_level: "info"
+
+repos: []
+
+package_groups: []
+
+packages:
+  - bash
+  - coreutils
+  - dnf
+
+cmds: []
+
+copyfiles: []
